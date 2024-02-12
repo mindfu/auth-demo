@@ -73,6 +73,10 @@ next();
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+
+// Serve static files from the "uploads" directory
+app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
+
 app.listen(5001,function(){
   console.log('listening on port 5001');
 });
